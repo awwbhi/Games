@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script src="https://kit.fontawesome.com/a14ae32021.js" crossorigin="anonymous"></script>
+<meta http-equiv="Content-Type" content=" text/html; charset=utf-8" /> 
+<title>Hepi Baday Po</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+<link href="default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">//</span><br />
+			<span class="space"/><span class="comments">   a small gift from the guy you love</span><br />
+			<span class="space"/><span class="comments">//</span><br />
+			Hey babygirl!<br />
+			HAPPY BIRTHDAYYYYY!!!!<br />
+			<span class="comments">**i feel like sreaming it aloud** </span><br />
+			you're the best thing that has happened to me;<br />
+			<!-- <span class="comments">// Your face Your Voice Your Words.</span><br /> -->
+			You're everything that I've wished for;<br />
+			I can't help but marvel at how deeply you've become intertwined with my soul.<br/>
+			From the playful moments that made me smile,<br /> 
+			to the quiet,<br />
+			intimate ones where just your touch sent shivers down my spine,<br /> 
+			you've captivated me entirely;<br />
+			You are my muse, the one whose presence makes the world feel softer,<br /> 
+			whose touch ignites my soul.<br />  
+			In your arms, I’ve discovered a sanctuary,<br />  
+			a place where desire meets tenderness,<br />  
+			and passion flows like poetry.<br />  
+			Every glance from you stirs something deeper in me,<br />  
+			every brush of your skin against mine feels like a promise of forever.<br />
+			You are the rhythm of my heart, the flame that burns within me.<br />
+			I want you to know how fiercely I love you, not just in the heat of our closeness,<br />
+			but in the quiet moments when our souls simply exist together.<br />
+
+			<span class="comments">** I'm sure there aren't enough words to describe what and how i feel about you **</span><br />
+			And here we are counting days of togetherness with each passing moment ;<br />
+			<br>
+			<br>
+			All I want to say is:<br />
+			I will always love you ;<br />
+			<br>
+			<br>
+			Now,in case you're missing me you can touch the heart below<br />
+			<br>
+			<span id="heartspan"> 
+			<a href="US.jpg"><i class="fas fa-heart" id="icon"></i></a>
+			</span>
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					So, apparently I've been tolerating you for around..
+					<div id="elapseClock"></div>
+					<div id = "message2">(and I've always craved for more 🤎)</div>
+				</div>
+				<div id="loveu">
+					I REALLY Love You Po🐼🖤 <br/>
+					<div class="signature">- Yours</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var offsetX = $("#loveHeart").width() / 2;
+	var offsetY = $("#loveHeart").height() / 2 - 50;
+	var together = new Date(2018, 5, 27, 16, 30, 0, 0);
+	
+	if (!document.createElement('canvas').getContext) {
+		var msg = document.createElement("div");
+		msg.id = "errorMsg";
+		msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+		document.body.appendChild(msg);
+		$("#code").css("display", "none")
+		$("#copyright").css("position", "absolute");
+		$("#copyright").css("bottom", "10px");
+		document.execCommand("stop");
+	} else {
+		setTimeout(function () {
+			startHeartAnimation();
+		}, 5000);
+	
+		timeElapse(together);
+		setInterval(function () {
+			timeElapse(together);
+		}, 500);
+	
+		adjustCodePosition();
+		$("#code").typewriter();
+	}
+	
+	function timeElapse(date) {
+		var current = new Date();
+		var seconds = Math.floor((current - date) / 1000);
+		var days = Math.floor(seconds / (3600 * 24)+30);
+		seconds = seconds % (3600 * 24);
+		var hours = Math.floor(seconds / 3600+12);
+		seconds = seconds % 3600;
+		var minutes = Math.floor(seconds / 60);
+		seconds = Math.floor(seconds % 60);
+		
+		if (days < 10) { days = "0" + days; }
+		if (hours < 10) { hours = "0" + hours; }
+		if (minutes < 10) { minutes = "0" + minutes; }
+		if (seconds < 10) { seconds = "0" + seconds; }
+		
+		var result = `<span class="digit">${days}</span> days 
+					  <span class="digit">${hours}</span> hours 
+					  <span class="digit">${minutes}</span> minutes 
+					  <span class="digit">${seconds}</span> seconds`; 
+		
+		$("#elapseClock").html(result);
+	}
+	</script>
+	</body>
+	</html>
